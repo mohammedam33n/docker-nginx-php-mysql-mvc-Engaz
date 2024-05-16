@@ -8,8 +8,15 @@ use App\Http\Traits\ResponseHelperTrait;
 class ArticlesController extends Controller
 {
     use ResponseHelperTrait;
+
+
     public function index()
     {
+
+        if (!checkAuth()) {
+            return $this->returnWrong('Unauthenticated', 401);
+        }
+
         $data     = $this->load->model('Articles')->all();
         $articles = $this->articleCollection($data);
         $data = [
@@ -19,6 +26,10 @@ class ArticlesController extends Controller
     }
     public function store()
     {
+        if (!checkAuth()) {
+            return $this->returnWrong('Unauthenticated', 401);
+        }
+
         if (!$this->articleStoreRequest()) {
             $errors = $this->validator->flattenMessages();
             return $this->returnWrong('Wrong', $errors);
@@ -29,6 +40,10 @@ class ArticlesController extends Controller
     }
     public function show($id)
     {
+        if (!checkAuth()) {
+            return $this->returnWrong('Unauthenticated', 401);
+        }
+
         $article = $this->load->model('Articles');
         if (!$article->exists($id)) {
             return $this->returnWrong('Not Found');
@@ -41,6 +56,9 @@ class ArticlesController extends Controller
     }
     public function update($id)
     {
+        if (!checkAuth()) {
+            return $this->returnWrong('Unauthenticated', 401);
+        }
         if (!$this->articleStoreRequest()) {
             $errors = $this->validator->flattenMessages();
             return $this->returnWrong('Wrong', $errors);
@@ -56,6 +74,10 @@ class ArticlesController extends Controller
     }
     public function delete($id)
     {
+        if (!checkAuth()) {
+            return $this->returnWrong('Unauthenticated', 401);
+        }
+
         $articleModel = $this->load->model('Articles');
 
         if (!$articleModel->exists($id)) {
