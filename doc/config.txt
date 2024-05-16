@@ -49,17 +49,17 @@ _________________________________________________
 ## APIS ##
 In src\App\index.php
 
-## APIS  Routes
+## APIS Authentication
 /api/auth/login
 
-## APIS Articles Routes
+## APIS Articles 
 /api/articles
 /api/articles/store
 /api/articles/show/:id
 /api/articles/update/:id
 /api/articles/delete/:id
 
-// APIS Not Found Routes
-404
+// APIS Not Found
+/404
 
 _________________________________________________

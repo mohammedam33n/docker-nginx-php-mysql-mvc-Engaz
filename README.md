@@ -270,6 +270,24 @@ ___
 
 ___
 
+## APIS Routes ##
+
+* APIS Authentication
+/api/auth/login
+
+* APIS Articles
+/api/articles
+/api/articles/store
+/api/articles/show/:id
+/api/articles/update/:id
+/api/articles/delete/:id
+
+* APIS Not Found
+/404
+___
+
+
+
 ## Use Makefile
 
 When developing, you can use [Makefile](https://en.wikipedia.org/wiki/Make_(software)) for doing the following operations :
