@@ -15,21 +15,22 @@ class UserController extends Controller
             $errors = $this->errors;
             return $this->returnWrong('Wrong', $errors);
         }
-
-
         $loginModel   = $this->load->model('Login');
         $loggedInUser = $loginModel->user();
 
+        $token = 'Bearer' . ' ' . generateToken();
 
-        if ($this->request->post('remember')) {
-            // save login data in cookie
-            $this->cookie->set('login', $loggedInUser->code);
-        } else {
-            // save login data in session
-            $this->session->set('login', $loggedInUser->code);
-        }
+        $filePath = ROOT . '/token_file.txt';
 
-        $data = $this->userResource($loggedInUser);
+        // Write the token to the file
+        file_put_contents($filePath, $token);
+
+
+        $data  = [
+            'user'  => $this->userResource($loggedInUser),
+            'token' => $token,
+        ];
+
         return $this->returnJSON($data, 'Successfully');
     }
     //------------------------------------------------------------------
@@ -73,6 +74,6 @@ class UserController extends Controller
         ];
     }
 
-
     //------------------------------------------------------------------
+
 }

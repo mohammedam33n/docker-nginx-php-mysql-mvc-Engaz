@@ -166,3 +166,57 @@ if (!function_exists('jsonResponse')) {
         exit;
     }
 }
+
+
+
+if (!function_exists('jsonResponse')) {
+    /**
+     * Remove any unwanted characters from the given string
+     * and replace it with -
+     *
+     * @param string $string
+     * @return string
+     */
+    function jsonResponse($data, $code)
+    {
+        http_response_code($code);
+        header('Content-Type: application/json');
+        echo json_encode($data);
+        exit;
+    }
+}
+
+
+
+
+
+if (!function_exists('checkAuth')) {
+
+    function checkAuth()
+    {
+        // Check if the Authorization header is set
+        if (!isset($_SERVER['HTTP_AUTHORIZATION'])) {
+            return false;
+        }
+        // Retrieve the value of the Authorization header
+        $token = $_SERVER['HTTP_AUTHORIZATION'];
+
+        $filePath = ROOT . '/token_file.txt';
+        // Read the token from the file
+        $storedToken = file_get_contents($filePath);
+
+        if ($token != $storedToken) {
+            return false;
+        }
+
+        return true;
+    }
+}
+
+
+if (!function_exists('generateToken')) {
+    function generateToken($length = 40)
+    {
+        return bin2hex(random_bytes($length));
+    }
+}
