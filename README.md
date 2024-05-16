@@ -95,13 +95,13 @@ ___
 To install [Git](http://git-scm.com/book/en/v2/Getting-Started-Installing-Git), download it and install following the instructions :
 
 ```sh
-git clone https://github.com/mohammedam33n/docker-nginx-php-mysql-mvc(Engaz).git
+git clone https://github.com/mohammedam33n/docker-nginx-php-mysql-mvc-Engaz.git
 ```
 
 Go to the project directory :
 
 ```sh
-cd docker-nginx-php-mysql-mvc(Engaz)
+cd docker-nginx-php-mysql-mvc-Engaz
 ```
 
 ### Project tree
@@ -204,7 +204,7 @@ ___
 
 If you use another IDE than [PHPStorm](https://www.jetbrains.com/phpstorm/) or [Netbeans](https://netbeans.org/), go to the [remote debugging](https://xdebug.org/docs/remote) section of Xdebug documentation.
 
-For a better integration of Docker to PHPStorm, use the [documentation](https://github.com/mohammedam33n/docker-nginx-php-mysql-mvc(Engaz)/blob/master/doc/phpstorm-macosx.md).
+For a better integration of Docker to PHPStorm, use the [documentation](https://github.com/mohammedam33n/docker-nginx-php-mysql-mvc-Engaz/blob/master/doc/phpstorm-macosx.md).
 
 1. Get your own local IP address :
 
