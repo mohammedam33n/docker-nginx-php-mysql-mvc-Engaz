@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "1143235f-6495-424b-a5ff-942e7491a117",
+		"name": "Blog(Engaz)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20865573"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "en"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "user@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "123456789d",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/auth/login"
+					},
+					"response": [
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "user@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{base_url}}/auth/login"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:13:11 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"status\": true,\n    \"message\": \"Successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"user\",\n        \"email\": \"user@gmail.com\"\n    }\n}"
+						},
+						{
+							"name": "Invalid Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept-Language",
+										"value": "en"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "user@gmail.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456789d",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{base_url}}/auth/login"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:18:13 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"400\",\n    \"status\": false,\n    \"message\": \"Wrong\",\n    \"errors\": [\n        \"Invalid Login Data\"\n    ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Articles",
+			"item": [
+				{
+					"name": "get all articles",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{base_url}}/articles"
+					},
+					"response": [
+						{
+							"name": "get all articles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{base_url}}/articles"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:13:31 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"status\": true,\n    \"message\": \"Successfully\",\n    \"data\": {\n        \"articles\": [\n            {\n                \"id\": 6,\n                \"title\": \"Title\",\n                \"des\": \"Des\"\n            },\n            {\n                \"id\": 5,\n                \"title\": \"title update\",\n                \"des\": \"des update\"\n            },\n            {\n                \"id\": 4,\n                \"title\": \"Fashion\",\n                \"des\": \"des - 3\"\n            },\n            {\n                \"id\": 3,\n                \"title\": \"Fashion\",\n                \"des\": \"des - 3\"\n            },\n            {\n                \"id\": 2,\n                \"title\": \"Politics\",\n                \"des\": \"des - 2\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Add Article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Title",
+									"type": "text"
+								},
+								{
+									"key": "des",
+									"value": "Des",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/moham/Downloads/download.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{base_url}}/articles/store"
+					},
+					"response": [
+						{
+							"name": "Add Article Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "Title",
+											"type": "text"
+										},
+										{
+											"key": "des",
+											"value": "Des",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/moham/Downloads/download.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{base_url}}/articles/store"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:04:04 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\"code\":\"200\",\"status\":true,\"message\":\"Article Has Been Created Successfully\"}"
+						}
+					]
+				},
+				{
+					"name": "show article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"url": "{{base_url}}/articles/show/5"
+					},
+					"response": [
+						{
+							"name": "show article",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"url": "{{base_url}}/articles/show/5"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:14:03 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json",
+									"description": ""
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": \"200\",\n    \"status\": true,\n    \"message\": \"Successfully\",\n    \"data\": {\n        \"id\": 5,\n        \"title\": \"title update\",\n        \"des\": \"des update\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Update Article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "title update",
+									"type": "text"
+								},
+								{
+									"key": "des",
+									"value": "des update",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/moham/Downloads/download.jpg",
+									"disabled": true
+								}
+							]
+						},
+						"url": "{{base_url}}/articles/update/7"
+					},
+					"response": [
+						{
+							"name": "Update Article Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "title",
+											"value": "title update",
+											"type": "text"
+										},
+										{
+											"key": "des",
+											"value": "des update",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/moham/Downloads/download.jpg",
+											"disabled": true
+										}
+									]
+								},
+								"url": "{{base_url}}/articles/update/7"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:04:28 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\"code\":\"200\",\"status\":true,\"message\":\"Article Has Been Updated Successfully\"}"
+						}
+					]
+				},
+				{
+					"name": "Delete Article",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "_method",
+									"value": "DELETE",
+									"type": "text"
+								}
+							]
+						},
+						"url": "{{base_url}}/articles/delete/2"
+					},
+					"response": [
+						{
+							"name": "Delete Article Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "DELETE",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{base_url}}/articles/delete/7"
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:14:43 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\"code\":\"400\",\"status\":false,\"message\":\"Not Found\"}"
+						},
+						{
+							"name": "Delete Article Wrong ID",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "_method",
+											"value": "DELETE",
+											"type": "text"
+										}
+									]
+								},
+								"url": "{{base_url}}/articles/delete/2"
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx/1.25.5"
+								},
+								{
+									"key": "Date",
+									"value": "Thu, 16 May 2024 00:15:05 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=UTF-8"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "X-Powered-By",
+									"value": "PHP/8.1.9"
+								}
+							],
+							"cookie": [],
+							"body": "{\"code\":\"200\",\"status\":true,\"message\":\"Article Has Been Deleted Successfully\"}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:8005//api",
+			"type": "string"
+		}
+	]
+}

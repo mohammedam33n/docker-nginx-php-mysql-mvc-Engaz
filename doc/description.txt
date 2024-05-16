@@ -1,0 +1,26 @@
+_________________________________________________________________________
+1. Development: Make a simple crud API for blog
+    - Don't use frameworks or mini frameworks, you can only use third parties.
+    - API should have REST endpoints for article model
+    - You should only soft delete the articles
+    - We expect endpoint for: Create, Update, Get one, Get all and Delete the articles
+    - The solution should have authentication
+    - Get and Get all endpoint should be public access, others should be allowed only for an authenticated user
+
+
+2. Engineering: Make sure we can easily create and check the application by assuring you have
+    - GIT installed, use github, bitbucket or any similar service.
+    - Any type of virtualization (Vagrant, Docker).
+    - The application can be build and installed using simple instructions.
+    - Attach README.md for documentation.
+
+
+3. Extra point will be give if your application has:
+    - Unit / Functional Tests
+    - POSTMAN collection showing access to each endpoints
+    - You adhere to PSR standards.
+    - You have a logging in place.
+    - You thought through Security.
+    - You thought through Scalability.
+    - You thought through Design Patterns.
+_________________________________________________________________________

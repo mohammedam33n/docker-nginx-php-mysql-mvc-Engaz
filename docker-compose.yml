@@ -1,0 +1,67 @@
+version: "3.7"
+services:
+
+  app:
+    build:
+      args:
+        user: ameen
+        uid: 1000
+      context: ./
+    working_dir: /var/www/
+    environment:
+      - COMPOSER_MEMORY_LIMIT=-1
+    depends_on:
+      - db
+    volumes:
+      - ./:/var/www
+    networks:
+      - ameen-mvc
+
+  db:
+      container_name: sql_db
+      restart: always
+      image: mysql:latest
+      platform: linux/x86_64
+      ports:
+      - 3307:3306
+      environment:
+        MYSQL_DATABASE: ${DB_DATABASE}
+        MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+        MYSQL_PASSWORD: ${DB_PASSWORD}
+        MYSQL_USER: ${DB_USERNAME}
+      volumes:
+        - ./db-data:/var/lib/mysql
+      networks:
+        - ameen-mvc
+
+  nginx:
+    image: nginx:alpine
+    ports:
+      - 8005:80
+    depends_on:
+      - db
+      - app
+    volumes:
+      - ./:/var/www
+      - ./docker-compose/nginx:/etc/nginx/conf.d/
+    networks:
+      - ameen-mvc
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+      - 3021:80
+    networks:
+      - ameen-mvc
+
+networks:
+  ameen-mvc:
+    driver: bridge
+
+volumes:
+  dbdata:
+    driver: local
