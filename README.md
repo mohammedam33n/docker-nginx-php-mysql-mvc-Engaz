@@ -272,18 +272,18 @@ ___
 
 ## APIS Routes ##
 
-* APIS Authentication
-/api/auth/login
+APIS Authentication
+* /api/auth/login
 
-* APIS Articles
-/api/articles
-/api/articles/store
-/api/articles/show/:id
-/api/articles/update/:id
-/api/articles/delete/:id
+APIS Articles
+* /api/articles
+* /api/articles/store
+* /api/articles/show/:id
+* /api/articles/update/:id
+* /api/articles/delete/:id
 
-* APIS Not Found
-/404
+APIS Not Found
+* /404
 ___
 
 
